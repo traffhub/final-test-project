@@ -1,7 +1,9 @@
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
+import pytest
 
 link = "http://selenium1py.pythonanywhere.com"
+
 
 def test_guest_can_go_login_page(browser):
     page = MainPage(browser,link)
