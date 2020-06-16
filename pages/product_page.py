@@ -2,7 +2,6 @@ from .base_page import BasePage
 from pages.locators import AddToBasket
 from selenium.common.exceptions import NoAlertPresentException
 import math
-import time
 
 class BasketPage(BasePage):
     def add_product_to_basket(self):
@@ -42,9 +41,8 @@ class BasketPage(BasePage):
         assert self.is_element_disappeared(*AddToBasket.BASKET_NAME,4), "Success message is not presented"
 
     def should_not_be_success_message1(self):
-        assert self.is_not_element_present(*AddToBasket.SUCCESS_MESSAGE), \
+        assert self.is_not_element_present(*AddToBasket.BASKET_NAME), \
             "Success message is presented, but should not be"
 
     def view_basket(self):
-
         self.click_element(*AddToBasket.VIEW_BASKET_BUTTON)
